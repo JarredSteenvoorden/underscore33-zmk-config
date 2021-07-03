@@ -112,7 +112,7 @@ behaviors {
             bindings = <&kp K_COPY>;
             layers = <0 1 2>;
         };
-        combo_cut {
+        combo_paste {
             timeout-ms = <50>;
             key-positions = <22 23>;
             bindings = <&kp K_PASTE>;
