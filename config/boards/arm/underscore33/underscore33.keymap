@@ -73,7 +73,7 @@ behaviors {
             bindings = <&sk LCTRL>;
             layers = <0 1 2>;
         };
-        combo_lctrl {
+        combo_lgui {
             timeout-ms = <50>;
             key-positions = <21 23>;
             bindings = <&sk LGUI>;
@@ -92,7 +92,7 @@ behaviors {
             bindings = <&sk RCTRL>;
             layers = <0 1 2>;
         };
-        combo_rctrl {
+        combo_rgui {
             timeout-ms = <50>;
             key-positions = <26 28>;
             bindings = <&sk RGUI>;
