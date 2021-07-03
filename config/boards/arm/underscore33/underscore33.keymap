@@ -24,95 +24,25 @@ behaviors {
         compatible = "zmk,combos";
 
         // Escape, Tab, Enter, Backspace, Del
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-            layers = <0 1 2>;
-        };
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp TAB>;
-            layers = <0 1 2>;
-        };
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <7 16>;
-            bindings = <&kp ENTER>;
-            layers = <0 1 2>;
-        };
-        combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp BKSP>;
-            layers = <0 1 2>;
-        };
-        combo_del {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp DEL>;
-            layers = <0 1 2>;
-        };
+        combo_esc   { timeout-ms = <50>; layers = <0 1 2>; key-positions = <1 2>;   bindings = <&kp ESC>; };
+        combo_tab   { timeout-ms = <50>; layers = <0 1 2>; key-positions = <11 12>; bindings = <&kp TAB>; };
+        combo_enter { timeout-ms = <50>; layers = <0 1 2>; key-positions = <7 16>;  bindings = <&kp ENTER>; };
+        combo_bspc  { timeout-ms = <50>; layers = <0 1 2>; key-positions = <7 8>;   bindings = <&kp BKSP>; };
+        combo_del   { timeout-ms = <50>; layers = <0 1 2>; key-positions = <17 18>; bindings = <&kp DEL>; };
 
         // One shot CTRL, ALT, GUI
-        combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <1 3>;
-            bindings = <&sk LALT>;
-            layers = <0 1 2>;
-        };
-        combo_lctrl {
-            timeout-ms = <50>;
-            key-positions = <11 13>;
-            bindings = <&sk LCTRL>;
-            layers = <0 1 2>;
-        };
-        combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <21 23>;
-            bindings = <&sk LGUI>;
-            layers = <0 1 2>;
-        };
+        combo_lalt  { timeout-ms = <50>; layers = <0 1 2>; key-positions = <1 3>;   bindings = <&sk LALT>; };
+        combo_lctrl { timeout-ms = <50>; layers = <0 1 2>; key-positions = <11 13>; bindings = <&sk LCTRL>; };
+        combo_lgui  { timeout-ms = <50>; layers = <0 1 2>; key-positions = <21 23>; bindings = <&sk LGUI>; };
 
-        combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <6 8>;
-            bindings = <&sk RALT>;
-            layers = <0 1 2>;
-        };
-        combo_rctrl {
-            timeout-ms = <50>;
-            key-positions = <16 18>;
-            bindings = <&sk RCTRL>;
-            layers = <0 1 2>;
-        };
-        combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <26 28>;
-            bindings = <&sk RGUI>;
-            layers = <0 1 2>;
-        };
+        combo_ralt  { timeout-ms = <50>; layers = <0 1 2>; key-positions = <6 8>;   bindings = <&sk RALT>; };
+        combo_rctrl { timeout-ms = <50>; layers = <0 1 2>; key-positions = <16 18>; bindings = <&sk RCTRL>; };
+        combo_rgui  { timeout-ms = <50>; layers = <0 1 2>; key-positions = <26 28>; bindings = <&sk RGUI>; };
 
         // Cut, Copy, Paste
-        combo_cut {
-            timeout-ms = <50>;
-            key-positions = <21 22 23>;
-            bindings = <&kp LC(X)>;
-            layers = <0 1 2>;
-        };
-        combo_copy {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp LC(C)>;
-            layers = <0 1 2>;
-        };
-        combo_paste {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp LC(V)>;
-            layers = <0 1 2>;
-        };
+        combo_cut   { timeout-ms = <50>; layers = <0 1 2>; key-positions = <21 22 23>; bindings = <&kp LC(X)>; };
+        combo_copy  { timeout-ms = <50>; layers = <0 1 2>; key-positions = <21 22>;    bindings = <&kp LC(C)>; };
+        combo_paste { timeout-ms = <50>; layers = <0 1 2>; key-positions = <22 23>;    bindings = <&kp LC(V)>; };
     };
 };
 
@@ -120,43 +50,28 @@ keymap {
     compatible = "zmk,keymap";
 
     default_layer {
-        // -----------------------------------------------------------------------------------------
-        // |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
-        // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  '  |
-        // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
-        //             | CTL |          SPACE          | CTL |
         bindings = <
-            &kp Q           &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
-            &lt 2 A         &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp APOS
-            &mt LSHFT Z     &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &mt RSHFT FSLH
-            &kp LCTRL       &lt 1 SPC   &lt 2 ENTER
+            &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
+            &lt 2 A         &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp APOS
+            &mt LSHFT Z     &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RSHFT FSLH
+            &kp LCTRL       &lt 1 SPC       &lt 2 ENTER
         >;
     };
 
     sym_layer {
-        // -----------------------------------------------------------------------------------------
-        // |  1  |  2  |  3   |  4  |  5  |  6  |  7  |  8  |  9  |  0  |
-        // |  !  |  @  |  #   |  $  |  %  |  ^  |  &  |  *  |  =  |  -  |
-        // |  \  |  {  |  [   |  (  |  _  |  )  |  ]  |  }  |  .  |  `  |
-        //             | BOOT |                       | RST |
         bindings = <
-            &kp N1      &kp N2      &kp N3    &kp N4      &kp N5      &kp N6    &kp N7    &kp N8    &kp N9     &kp N0
-            &kp EXCL    &kp AT      &kp HASH  &kp DOLLAR  &kp PRCNT   &kp CARET &kp AMPS  &kp STAR  &kp EQUAL  &kp MINUS
-            &kp BSLH    &kp LBRC    &kp LBKT  &kp LPAR    &kp UNDER   &kp RPAR  &kp RBKT  &kp UNDER &kp DOT    &kp GRAVE
-            &bootloader &trans      &reset
+            &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0
+            &trans          &kp F2          &kp F3          &kp F4          &kp F5          &kp SEMI        &kp MINUS       &kp EQUAL       &kp LBKT        &kp RBKT
+            &kp LSHFT       &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp BSLH        &kp GRAVE       &trans          &kp RSHFT
+            &bootloader     &trans          &reset
         >;
     };
 
     nav_layer {
-        // -----------------------------------------------------------------------------------------
-        // |BTCLR|     |      |      |     |      | HOME |  UP  | END |      |
-        // |     |     |      |      |     |      | LEFT | DOWN |RIGHT |     |
-        // | BT0 | BT1 |      |      |     |      |      |      |      |      |
-        //             |      |                          |      |
         bindings = <
-            &bt BT_CLR      &trans          &kp LGUI        &kp DEL         &kp BSPC     &trans    &kp HOME &kp UP    &kp END &trans
-            &trans          &trans          &kp LSHFT       &kp LCTRL       &kp ENTER     &trans  &kp LEFT  &kp DOWN  &kp RIGHT &trans
-            &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans          &trans     &trans    &trans    &trans    &trans    &trans
+            &bt BT_CLR      &trans          &kp LGUI        &kp DEL         &kp BSPC        &trans          &kp HOME        &kp UP          &kp END         &kp BKSP
+            &trans          &trans          &kp LSHFT       &kp LCTRL       &kp ENTER       &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp DEL
+            &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans          &trans          &trans          &kp PG_UP       &kp PG_DN       &kp INS         &trans
             &trans          &trans          &trans
         >;
     };
