@@ -10,7 +10,7 @@
 
 &mt {
     tapping-term-ms = <200>;
-    flavor = "tap-preferred";
+    flavor = "hold-preferred";
 };
 
 / {
@@ -75,8 +75,8 @@ keymap {
     nav_layer {
         bindings = <
             &bt BT_CLR      &trans          &kp LGUI        &kp DEL         &kp BSPC        &trans          &kp HOME        &kp UP          &kp END         &kp BKSP
-            &trans          &trans          &kp LSHFT       &kp LCTRL       &kp ENTER       &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp DEL
-            &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans          &kp LALT        &trans          &kp PG_UP       &kp PG_DN       &kp INS         &trans
+            &trans          &trans          &kp LSHFT       &kp LCTRL       &kp LALT        &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp DEL
+            &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans          &kp ENTER       &trans          &kp PG_UP       &kp PG_DN       &kp INS         &trans
             &trans          &kp TAB         &trans
         >;
     };
