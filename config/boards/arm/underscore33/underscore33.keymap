@@ -98,19 +98,19 @@ behaviors {
         combo_cut {
             timeout-ms = <50>;
             key-positions = <21 22 23>;
-            bindings = <&kp LCTRL>, <&kp X>;
+            bindings = <&kp LCTRL &kp X>;
             layers = <0 1 2>;
         };
         combo_copy {
             timeout-ms = <50>;
             key-positions = <21 22>;
-            bindings = <&kp LCTRL>, <&kp C>;
+            bindings = <&kp LCTRL &kp C>;
             layers = <0 1 2>;
         };
         combo_paste {
             timeout-ms = <50>;
             key-positions = <22 23>;
-            bindings = <&kp LCTRL>, <&kp V>;
+            bindings = <&kp LCTRL &kp V>;
             layers = <0 1 2>;
         };
     };
