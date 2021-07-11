@@ -10,7 +10,7 @@
 
 #define COMBO_TIMEOUT <30>
 
-#define DEFAULT 0
+#define BASE    0
 #define LNAV    1
 #define NAV     2
 #define SYM     3
@@ -39,7 +39,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "STICKY_TAP";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
+        tapping-term-ms = <100>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&sk>;
     };
@@ -55,22 +55,22 @@ behaviors {
         combo_enter { timeout-ms = COMBO_TIMEOUT; key-positions = <17 18>; bindings = <&kp ENTER>; };
 
         // Sticky tap CTRL, ALT, GUI
-        combo_lgui  { timeout-ms = COMBO_TIMEOUT; key-positions = <1 3>;   bindings = <&st LGUI LGUI>; };
-        combo_lctrl { timeout-ms = COMBO_TIMEOUT; key-positions = <11 13>; bindings = <&st LCTRL LCTRL>; };
-        combo_lalt  { timeout-ms = COMBO_TIMEOUT; key-positions = <21 23>; bindings = <&st LALT LALT>; };
+        combo_lgui  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <1 3>;         bindings = <&st LGUI LGUI>; };
+        combo_lctrl { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <11 13>;       bindings = <&st LCTRL LCTRL>; };
+        combo_lalt  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <21 23>;       bindings = <&st LALT LALT>; };
 
-        combo_ralt  { timeout-ms = COMBO_TIMEOUT; key-positions = <6 8>;   bindings = <&st RALT RALT>; };
-        combo_rctrl { timeout-ms = COMBO_TIMEOUT; key-positions = <16 18>; bindings = <&st RCTRL RCTRL>; };
-        combo_rgui  { timeout-ms = COMBO_TIMEOUT; key-positions = <26 28>; bindings = <&st RGUI RGUI>; };
+        combo_ralt  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <6 8>;         bindings = <&st RALT RALT>; };
+        combo_rctrl { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <16 18>;       bindings = <&st RCTRL RCTRL>; };
+        combo_rgui  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <26 28>;       bindings = <&st RGUI RGUI>; };
 
         // Cut, Copy, Paste
-        combo_cut   { timeout-ms = COMBO_TIMEOUT; key-positions = <21 22 23>; bindings = <&kp LC(X)>; };
-        combo_copy  { timeout-ms = COMBO_TIMEOUT; key-positions = <21 22>;    bindings = <&kp LC(C)>; };
-        combo_paste { timeout-ms = COMBO_TIMEOUT; key-positions = <22 23>;    bindings = <&kp LC(V)>; };
+        combo_cut   { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <21 22 23>;    bindings = <&kp LC(X)>; };
+        combo_copy  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <21 22>;       bindings = <&kp LC(C)>; };
+        combo_paste { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <22 23>;       bindings = <&kp LC(V)>; };
 
         // Left hand nav toggle, function layer
-        combo_lnav  { timeout-ms = COMBO_TIMEOUT; key-positions = <11 2 13>;  bindings = <&tog LNAV>; };
-        combo_func  { timeout-ms = COMBO_TIMEOUT; key-positions = <12 13>;    bindings = <&sl FUNC>; };
+        combo_lnav  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <11 2 13>;     bindings = <&tog LNAV>; };
+        combo_func  { timeout-ms = COMBO_TIMEOUT; layers <BASE>; key-positions = <12 13>;       bindings = <&sl FUNC>; };
     };
 };
 
@@ -82,7 +82,7 @@ keymap {
             &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
             &lt NAV A       &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp APOS
             &mt LSHFT Z     &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RSHFT FSLH
-            &sl FUNC        &lt SYM SPC     &kp ENTER
+            &kp ENTER       &lt SYM SPC     &kp ENTER
         >;
     };
 
@@ -115,9 +115,9 @@ keymap {
 
     func_layer {
         bindings = <
-            _______         &kp F7          &kp F8          &kp F9          &kp F10         _______         _______         _______         _______         _______
-            _______         &kp F4          &kp F5          &kp F6          &kp F11         _______         _______         _______         _______         _______
-            _______         &kp F1          &kp F2          &kp F3          &kp F12         _______         _______         _______         _______         _______
+            _______         &kp F7          &kp F8          &kp F9          &kp F10         &kp F10         &kp F7          &kp F8          &kp F9          _______
+            _______         &kp F4          &kp F5          &kp F6          &kp F11         &kp F11         &kp F4          &kp F5          &kp F6          _______
+            _______         &kp F1          &kp F2          &kp F3          &kp F12         &kp F12         &kp F1          &kp F2          &kp F3          _______
             _______         _______         _______
         >;
     };
