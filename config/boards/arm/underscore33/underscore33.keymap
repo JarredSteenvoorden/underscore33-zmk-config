@@ -10,6 +10,11 @@
 
 #define COMBO_TIMEOUT <30>
 
+#define DEFAULT 0
+#define SYM     1
+#define NAV     2
+#define LNAV    3
+
 &mt {
     tapping-term-ms = <150>;
     flavor = "hold-preferred";
@@ -55,6 +60,9 @@ behaviors {
         combo_cut   { timeout-ms = COMBO_TIMEOUT; key-positions = <21 22 23>; bindings = <&kp LC(X)>; };
         combo_copy  { timeout-ms = COMBO_TIMEOUT; key-positions = <21 22>;    bindings = <&kp LC(C)>; };
         combo_paste { timeout-ms = COMBO_TIMEOUT; key-positions = <22 23>;    bindings = <&kp LC(V)>; };
+
+        // Left hand nav toggle
+        combo_lnav  { timeout-ms = COMBO_TIMEOUT; key-positions = <11 2 13>;    bindings = <&tog LNAV>; };
     };
 };
 
@@ -64,9 +72,9 @@ keymap {
     default_layer {
         bindings = <
             &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
-            &lt 2 A         &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp APOS
+            &lt NAV A       &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp APOS
             &mt LSHFT Z     &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RSHFT FSLH
-            &kp LCTRL       &lt 1 SPC       &lt 2 ENTER
+            &kp LCTRL       &lt SYM SPC     &kp ENTER
         >;
     };
 
@@ -85,6 +93,15 @@ keymap {
             &trans          &kp LALT        &kp LSHFT       &kp LCTRL       &kp ENTER       &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp DEL
             &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans          &trans          &trans          &kp PG_UP       &kp PG_DN       &kp INS         &trans
             &trans          &kp TAB         &trans
+        >;
+    };
+
+    lnav_layer {
+        bindings = <
+            &trans          &kp HOME        &kp UP          &kp END         &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &kp PG_UP       &kp PG_DOWN     &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans
         >;
     };
 };
