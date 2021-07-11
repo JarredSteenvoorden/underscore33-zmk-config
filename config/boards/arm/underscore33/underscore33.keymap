@@ -11,10 +11,10 @@
 #define COMBO_TIMEOUT <30>
 
 #define DEFAULT 0
-#define SYM     1
-#define FUNC    2
-#define NAV     3
-#define LNAV    4
+#define LNAV    1
+#define NAV     2
+#define SYM     3
+#define FUNC    4
 
 #define _______ &trans
 
@@ -86,6 +86,24 @@ keymap {
         >;
     };
 
+    lnav_layer {
+        bindings = <
+            _______         &kp HOME        &kp UP          &kp END         &kp PG_UP       _______         _______         _______         _______         _______
+            _______         &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       _______         _______         _______         _______         _______
+            _______         _______         _______         _______         _______         _______         _______         _______         _______         _______
+            _______         _______         _______
+        >;
+    };
+
+    nav_layer {
+        bindings = <
+            &bt BT_CLR      _______         &kp LGUI        &kp DEL         &kp BSPC        &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp BKSP
+            _______         &kp LALT        &kp LSHFT       &kp LCTRL       &kp ENTER       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp DEL
+            &bt BT_SEL 0    &bt BT_SEL 1    _______         _______         _______         _______         _______         _______         &kp INS         _______
+            _______         &kp TAB         _______
+        >;
+    };
+
     sym_layer {
         bindings = <
             &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0
@@ -100,24 +118,6 @@ keymap {
             _______         &kp F7          &kp F8          &kp F9          &kp F10         _______         _______         _______         _______         _______
             _______         &kp F4          &kp F5          &kp F6          &kp F11         _______         _______         _______         _______         _______
             _______         &kp F1          &kp F2          &kp F3          &kp F12         _______         _______         _______         _______         _______
-            _______         _______         _______
-        >;
-    };
-
-    nav_layer {
-        bindings = <
-            &bt BT_CLR      _______         &kp LGUI        &kp DEL         &kp BSPC        &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp BKSP
-            _______         &kp LALT        &kp LSHFT       &kp LCTRL       &kp ENTER       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp DEL
-            &bt BT_SEL 0    &bt BT_SEL 1    _______         _______         _______         _______         _______         _______         &kp INS         _______
-            _______         &kp TAB         _______
-        >;
-    };
-
-    lnav_layer {
-        bindings = <
-            _______         &kp HOME        &kp UP          &kp END         &kp PG_UP       _______         _______         _______         _______         _______
-            _______         &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       _______         _______         _______         _______         _______
-            _______         _______         _______         _______         _______         _______         _______         _______         _______         _______
             _______         _______         _______
         >;
     };
