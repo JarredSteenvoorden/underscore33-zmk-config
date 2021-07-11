@@ -68,8 +68,9 @@ behaviors {
         combo_copy  { timeout-ms = COMBO_TIMEOUT; key-positions = <21 22>;    bindings = <&kp LC(C)>; };
         combo_paste { timeout-ms = COMBO_TIMEOUT; key-positions = <22 23>;    bindings = <&kp LC(V)>; };
 
-        // Left hand nav toggle
-        combo_lnav  { timeout-ms = COMBO_TIMEOUT; key-positions = <11 2 13>;    bindings = <&tog LNAV>; };
+        // Left hand nav toggle, function layer
+        combo_lnav  { timeout-ms = COMBO_TIMEOUT; key-positions = <11 2 13>;  bindings = <&tog LNAV>; };
+        combo_func  { timeout-ms = COMBO_TIMEOUT; key-positions = <12 13>;    bindings = <&sl FUNC>; };
     };
 };
 
@@ -96,9 +97,9 @@ keymap {
 
     func_layer {
         bindings = <
-            _______         &kp F1          &kp F2          &kp F3          &kp F10         _______         _______         _______         _______         _______
+            _______         &kp F7          &kp F8          &kp F9          &kp F10         _______         _______         _______         _______         _______
             _______         &kp F4          &kp F5          &kp F6          &kp F11         _______         _______         _______         _______         _______
-            _______         &kp F7          &kp F8          &kp F9          &kp F12         _______         _______         _______         _______         _______
+            _______         &kp F1          &kp F2          &kp F3          &kp F12         _______         _______         _______         _______         _______
             _______         _______         _______
         >;
     };
