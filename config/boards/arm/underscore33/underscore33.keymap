@@ -49,7 +49,7 @@ behaviors {
     combos {
         compatible = "zmk,combos";
 
-        combo_disable { timeout-ms = COMBO_TIMEOUT; key-positions = <1 10>; bindings = <&tog DISABLE>; };
+        combo_disable { timeout-ms = COMBO_TIMEOUT; key-positions = <0 9>; bindings = <&tog DISABLE>; };
 
         // Escape, Tab, Enter, Backspace, Del
         combo_esc   { timeout-ms = COMBO_TIMEOUT; key-positions = <1 2>;   bindings = <&kp ESC>; };
