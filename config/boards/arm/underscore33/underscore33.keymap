@@ -15,8 +15,10 @@
 #define NAV     2
 #define SYM     3
 #define FUNC    4
+#define DISABLE 5
 
 #define _______ &trans
+#define XXXXXXX &none
 
 &mt {
     tapping-term-ms = <150>;
@@ -46,6 +48,8 @@ behaviors {
 
     combos {
         compatible = "zmk,combos";
+
+        combo_disable { timeout-ms = COMBO_TIMEOUT; key-positions = <1 10>; bindings = <&tog DISABLE>; };
 
         // Escape, Tab, Enter, Backspace, Del
         combo_esc   { timeout-ms = COMBO_TIMEOUT; key-positions = <1 2>;   bindings = <&kp ESC>; };
@@ -119,6 +123,15 @@ keymap {
             _______         &kp F4          &kp F5          &kp F6          &kp F11         &kp F11         &kp F4          &kp F5          &kp F6          _______
             _______         &kp F1          &kp F2          &kp F3          &kp F12         &kp F12         &kp F1          &kp F2          &kp F3          _______
             _______         _______         _______
+        >;
+    };
+
+    disable_layer {
+        bindings = <
+            XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX
+            XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX
+            XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX         XXXXXXX
+            XXXXXXX         XXXXXXX         XXXXXXX
         >;
     };
 };
